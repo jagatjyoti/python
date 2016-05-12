@@ -11,7 +11,7 @@ def remotecopy(name, delay, repeat):
 
   try:
     var_password = "Root1234"
-    remcpy = "rsync -avz ssh --progress /home/techmadmin/Desktop/swp-CSP-Base-6.3.0.0-08-Linux.iso root@192.168.1.102:/home/techmadmin/"
+    remcpy = "rsync -avz ssh --progress /home/techmadmin/Desktop/RedHat-Linux-6.iso root@192.168.1.102:/home/luckee/"
   
     var_child = pexpect.spawn(remcpy)
     
