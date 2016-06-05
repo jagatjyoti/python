@@ -1,4 +1,4 @@
-#!/usr/bin/pyton
+#!/usr/bin/python
 
 import subprocess
 cmd = "cat foo.txt | grep -i python"

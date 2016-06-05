@@ -10,7 +10,7 @@ print "1st operation as Sum 0f a & b is:", c
 c = a - b
 print "2nd operation as Diff of a & b is:", c
 
-c= a * b
+c = a * b
 print "3rd operation as Multiplication of a & b is", c
 
 c = a / b
