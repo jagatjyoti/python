@@ -3,10 +3,18 @@
 import subprocess
 import socket
 import sys
+import os
 from datetime import datetime
 
 remote_server = raw_input("Please enter remote host to scan ports: ")
 remote_serverIP = socket.gethostbyname(remote_server)
+
+response = os.system("ping -c 1 " + remote_server)
+if response != 0:
+  print "Remote server is down. Aborting ..."
+  sys.exit()
+else: 
+  print "Remote server is up. Continuing ..."
 
 print "**" *30
 print "Scanning ports for remote server ", remote_serverIP
