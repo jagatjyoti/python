@@ -1,21 +1,22 @@
 #! /usr/bin/python3.5
- 
+
 from optparse import OptionParser
 import sys
 import os
 import uuid
 import random
- 
+
+
 # Argument validation
- 
+
 parser = OptionParser('usage: %prog [path] [depth] [width]')
 (opts, args) = parser.parse_args()
- 
+
 if len(args) < 3:
         parser.error('please provide path, depth of directory, width of directory')
- 
+
 # Function to create binary tree
- 
+
 def build_dir_tree(base, depth, width):
     print("Call #%d: Creating directory ..." % depth)
     if depth >= 0:
@@ -29,14 +30,14 @@ def build_dir_tree(base, depth, width):
                 build_dir_tree(newbase, depth, width)
     else:
         return
- 
+
 print('path: %s, depth: %d, width: %d' % (sys.argv[1], int(sys.argv[2]), int(sys.argv[3])))
 build_dir_tree(sys.argv[1], int(sys.argv[2]), int(sys.argv[3]))
- 
+
 print('Binary tree creation successful. Starting to create files recursively ...')
- 
+
 # Function to create random files with varied sizes
- 
+
 def build_files(base):
     for dirs in os.walk(base):
         d = os.path.join(dirs[0])
@@ -48,8 +49,23 @@ def build_files(base):
             with open(os.path.join(d, filename), "w") as f:
                 f.write(" " * size)
             i += 1
- 
+
 print('path: %s' %(sys.argv[1]))
-build_files(sys.argv[1])
- 
-print('Files generated successfully !!!')
+
+# Checking filecount to halt create operation
+filecount = len(os.listdir('.'))
+while filecount < 20000000
+    build_files(sys.argv[1])
+
+print('Reached threshold filemark !!!')
+print('Bringing down files system to lowerlimit. Deletion initiated ...')
+
+def erase_files(base):
+    for the_file in os.listdir(base):
+    file_path = os.path.join(base, the_file)
+    try:
+        if os.path.isfile(file_path):
+            os.unlink(file_path)
+        #elif os.path.isdir(file_path): shutil.rmtree(file_path)
+    except Exception as e:
+        print(e)
