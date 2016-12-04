@@ -1,0 +1,7 @@
+{
+  "limits":{
+      "uplimit":3000000,
+      "lowlimit":1000000,
+      "standstill":2000000
+    }
+}
