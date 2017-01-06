@@ -9,13 +9,14 @@ def validateIP(address):
     if count != 3:
             print "Inside count"
             return False
+    subnet = address.split('.')
     else:
-            for ele in address:
-                if not ele.isdigit():
+            for each in subnet:
+                if not each.isdigit():
                     print type(ele)
                     print "Inside isdigit"
                     return False
-                i = int(ele)
+                i = int(each)
                 if i < 0 or i > 255:
                     print "Inside numcheck"
                     return False
