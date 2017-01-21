@@ -7,18 +7,15 @@ address = raw_input("Enter an IP to be validated: ")
 def validateIP(address):
     count = address.count('.')
     if count != 3:
-            print "Inside count"
-            return False
-    subnet = address.split('.')
+          return False
+
     else:
-            for each in subnet:
+          subnet = address.split('.')
+          for each in subnet:
                 if not each.isdigit():
-                    print type(ele)
-                    print "Inside isdigit"
                     return False
                 i = int(each)
                 if i < 0 or i > 255:
-                    print "Inside numcheck"
                     return False
     return True
 
