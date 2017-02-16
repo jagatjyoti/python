@@ -5,10 +5,10 @@ import json
 
 r = requests.get('https://jsonplaceholder.typicode.com/posts')
 print "Status code:", r.status_code
-#print "Headers:", r.headers
-#print "Content:", r.content
-data = json.loads(r)
-"""
+print "Headers:", r.headers
+print "Content:", r.content
+
+
 r = requests.get('https://jsonplaceholder.typicode.com/posts/1/comments')
 print "Status code:", r.status_code
 print "Headers:", r.headers
@@ -24,4 +24,3 @@ r = requests.post('https://jsonplaceholder.typicode.com/posts', headers=headers,
 print "Status code:", r.status_code
 print "Headers:", r.headers
 print "Content:", r.content
-"""
