@@ -2,6 +2,8 @@
 
 from library import *
 
-cmd = 'ls -l'
-print "Beginning .................."
+cmd = 'systemctl status network'
+print "========================================"
+print "           Checking service             "
+print "========================================"
 exec_command(cmd)
