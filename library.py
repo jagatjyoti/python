@@ -37,18 +37,26 @@ def exec_command(cmd):
   ssh_fd=set_connection()
   stdin, stdout, stderr = ssh_fd.exec_command(cmd)
   print "---------Result--------"
+  #print stdout.readlines()
+  output = stdout.readlines()
+  print "out: " + str(output)
+
+  for o in output:
+  	print o
+
  
   e=stderr.readlines()
   if len(e) != 0:
      print "Error in running command !"
      print e
  
-  
-  if any("Reason" in s for s in stdout.readlines()):
+  if any("not-found" in s for s in output):
      print "No such service !!"
+     sys.exit(1)
  
-  if any("Inactive" or "Dead" in s for s in stdout.readlines()):
+  if any("Dead" in s for s in output):
      print "Service is down !!"
+     sys.exit(1)
  
-  if any("running" in s for s in stdout.readlines()):
+  if any("running" in s for s in output):
      print "Service is up !!"
